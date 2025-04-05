@@ -1,8 +1,8 @@
+// Updated Header.tsx
 'use client';
 
 import React, { useState, useEffect } from 'react';
 
-// Updated Header component with proper Phantom wallet integration
 const Header = () => {
   const [connected, setConnected] = useState(false);
   const [publicKey, setPublicKey] = useState<string | null>(null);
@@ -39,7 +39,7 @@ const Header = () => {
     try {
       // Double-check if Phantom is installed
       if (!window.phantom?.solana?.isPhantom) {
-        alert("Phantom wallet is not installed. Please install it from https://phantom.app/");
+        alert("Phantom wallet is not installed. Please install it from https://phantom.app/") ;
         return;
       }
       
@@ -59,7 +59,7 @@ const Header = () => {
             "id": 1,
             "method": "getBalance",
             "params": [walletPublicKey]
-          })
+          }) 
         });
         
         const balanceData = await balanceResponse.json();
@@ -111,7 +111,7 @@ const Header = () => {
               "jsonrpc": "2.0",
               "id": 1,
               "method": "getBalance",
-              "params": [response.publicKey.toString()]
+              "params": [response.publicKey.toString() ]
             })
           });
           
